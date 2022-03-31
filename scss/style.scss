@@ -1,5 +1,6 @@
 @import './assets';
 @import './fonts';
+@import './animations';
 
 // MIXIN
 @mixin btn {
@@ -18,14 +19,19 @@
 }
 
 @mixin third-btn {
-    button {
-        border: 0;
-        text-decoration: none;
-        background-color: $secondary;
-        color: $white;
-        font-size: 20px;
-        padding: 10px;
-        cursor: pointer;
+    .third-btn-div {
+        margin-right: $hg-mar;
+        text-align: right;
+        button {
+            border: 1px solid $white;
+            text-decoration: none;
+            background-color: $secondary;
+            color: $white;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+        }
     }
 }
 
@@ -34,7 +40,7 @@
         border: 1px solid $primary;
         background-color: $primary;
         color: $white;
-        transition: all 300ms;
+        transition-duration: 300ms;
     }
 }
 
@@ -71,12 +77,12 @@ body {
 }
 
 // NAVBAR
-#nav {
+.nav {
     position: fixed;
     width: 100%;
     top: 0;
     // background-color: $white;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
     text-align: center;
     ul {
         li {
@@ -85,6 +91,7 @@ body {
             justify-content: space-around;
             padding: $sm-pad;
             a {
+                margin-top: 12px;
                 color: $black;
                 text-decoration: none;
             }
@@ -95,6 +102,36 @@ body {
         }
     }
 }
+
+// .nav-invert {
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     // background-color: $white;
+//     backdrop-filter: blur(15px);
+//     text-align: center;
+//     animation-name: invertIn;
+//     animation-delay: 0s;
+//     animation-duration: 0.5s; 
+//     animation-timing-function: ease-out;
+//     animation-fill-mode:forwards;
+//     ul {
+//         li {
+//             display: flex;
+//             flex-wrap: wrap;
+//             justify-content: space-around;
+//             padding: $sm-pad;
+//             a {
+//                 color: $white;
+//                 text-decoration: none;
+//             }
+//             h1 {
+//                 color: $white;
+//                 font-size: 35px;
+//             }
+//         }
+//     }
+// }
 
 // HERO
 #hero {
